@@ -102,7 +102,9 @@ function App() {
       <div className="row">
         <div className="col-6 ">
           {indiceComponente !== 0 && indiceComponente !== 3 && (
-            <button onClick={() => handleAtras()}>Atras</button>
+            <button className="btn btn-secondary" onClick={() => handleAtras()}>
+              Atras
+            </button>
           )}
         </div>
         {selectCategory != null ? (
@@ -110,6 +112,7 @@ function App() {
             {indiceComponente !== 3 && (
               <button
                 onClick={() => handleSiguiente()}
+                className="btn btn-secondary"
                 disabled={
                   selectCategory == null ||
                   (indiceComponente === 1 && selectTime == null)
@@ -121,7 +124,13 @@ function App() {
           </div>
         ) : null}
         {indiceComponente === 3 ? (
-          <button onClick={() => reset()}>Sacar otro turno</button>
+          <button
+            type="button"
+            className="btn btn-secondary"
+            onClick={() => reset()}
+          >
+            Sacar otro turno
+          </button>
         ) : null}
       </div>
     </div>

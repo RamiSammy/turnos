@@ -8,8 +8,6 @@ function TimesList({ serviceSelect, selectTime, setSelectTime }) {
   const [infoTime, setInfoTime] = useState([]);
 
   useEffect(() => {
-    console.log("Nashe");
-    console.log(serviceSelect);
     const infoTimeService = data?.filter(
       (dato) => dato.serviceId == serviceSelect.id
     );
