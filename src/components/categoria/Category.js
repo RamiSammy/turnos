@@ -1,11 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import SubCategory from "./SubCategory";
 
 function Category({ name, info, setCategory, selectCategory }) {
   const [isCollapsed, setIsCollapsed] = useState(true);
-  const nameWithOutSpace = name.replace(/\s/g, "_");
+
+  const nameWithOutSpace = name.replace(/\s/g, "_"); // Elimino los espacios
+
+  //Le asigno un id al colapsado relacionado con el nombre de la catergoria
   const collapseId = `collapse-${nameWithOutSpace}`;
 
+  //Cambiar entre colapsado y extendido
   const toggleCollapse = () => {
     setIsCollapsed(!isCollapsed);
   };

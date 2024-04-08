@@ -1,7 +1,7 @@
 [
   {
     "date": "2024-04-26",
-    "serviceId": 3,
+    "serviceId": 1,
     "availableTimeslots": [
       "09:00",
       "09:30",
@@ -23,17 +23,62 @@
   },
   {
     "date": "2024-10-15",
+    "serviceId": 2,
+    "availableTimeslots": ["10:30", "12:00", "13:00", "13:30"]
+  },
+  {
+    "date": "2024-10-15",
     "serviceId": 3,
     "availableTimeslots": ["10:30", "12:00", "13:00", "13:30"]
   },
   {
     "date": "2024-10-15",
-    "serviceId": 5,
+    "serviceId": 4,
     "availableTimeslots": ["10:30", "12:00", "13:00", "13:30"]
   },
   {
+    "date": "2024-04-27",
+    "serviceId": 1,
+    "availableTimeslots": ["14:30", "15:00", "17:00"]
+  },
+  {
+    "date": "2024-10-26",
+    "serviceId": 2,
+    "availableTimeslots": ["10:30", "13:30"]
+  },
+  {
     "date": "2024-10-15",
-    "serviceId": 7,
+    "serviceId": 4,
+    "availableTimeslots": ["10:30"]
+  },
+  {
+    "date": "2024-10-30",
+    "serviceId": 2,
+    "availableTimeslots": ["13:30"]
+  },
+  {
+    "date": "2024-11-15",
+    "serviceId": 9,
     "availableTimeslots": ["10:30", "12:00", "13:00", "13:30"]
+  },
+  {
+    "date": "2024-11-27",
+    "serviceId": 10,
+    "availableTimeslots": ["14:30", "15:00", "17:00"]
+  },
+  {
+    "date": "2024-11-26",
+    "serviceId": 8,
+    "availableTimeslots": ["10:30", "13:30"]
+  },
+  {
+    "date": "2024-12-15",
+    "serviceId": 8,
+    "availableTimeslots": ["10:30"]
+  },
+  {
+    "date": "2024-11-30",
+    "serviceId": 6,
+    "availableTimeslots": ["13:30"]
   }
 ]

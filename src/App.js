@@ -1,60 +1,66 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Category from "./components/Category";
-import CategoryList from "./components/CategoryList";
-import TimesList from "./components/TimesList";
+import CategoryList from "./components/categoria/CategoryList";
+import TimesList from "./components/fecha/TimesList";
 import Resume from "./components/Resume";
-import ProgressBar from "./components/ProgressBar";
+import ProgressBar from "./components/utils/ProgressBar";
 import Confirm from "./components/Confirm";
 
-const data = require("./API/services.json");
-
 function App() {
+  //Categoria seleccionada
   const [selectCategory, setSelectCategory] = useState(null);
+
+  //Dia y Horario seleccionado
   const [selectTime, setSelectTime] = useState(null);
 
-  const [showTime, setShowTime] = useState(false);
-
+  // Índice de componente para controlar la pantalla actual
   const [indiceComponente, setIndiceComponente] = useState(0);
 
-  const [progressbar, setProgresBar] = useState(25);
+  //Porcentaje de la barra de progreso
+  const [progressbar, setProgresBar] = useState(20);
 
+  //Texto que tiene que aparecer segun la pantalla
   const [textoContexto, setTextoContexto] = useState("");
 
+  //Avanzamos de pantalla
   const handleSiguiente = () => {
     setIndiceComponente((prevIndice) => prevIndice + 1);
   };
 
+  //Retrocedemos de pantalla
+  //Si estaba seleccionando horario y se retrocede, se elimina el dato almacenado
   const handleAtras = () => {
-    if (indiceComponente == 0) setSelectCategory(null);
-    if (indiceComponente == 1) setSelectTime(null);
+    if (indiceComponente === 0) setSelectCategory(null);
+    if (indiceComponente === 1) setSelectTime(null);
     setIndiceComponente((prevIndice) => prevIndice - 1);
   };
 
+  //Modifico el texto y la barra de progreso segun la pantalla que se encuentre
   useEffect(() => {
-    if (indiceComponente == 0) {
+    if (indiceComponente === 0) {
       setTextoContexto("Seleccionar servicio");
       setProgresBar(25);
     }
-    if (indiceComponente == 1) {
+    if (indiceComponente === 1) {
       setProgresBar(50);
       setTextoContexto("Seleccionar horario");
     }
-    if (indiceComponente == 2) {
+    if (indiceComponente === 2) {
       setProgresBar(75);
       setTextoContexto("Confirmar turno");
     }
-    if (indiceComponente == 3) {
+    if (indiceComponente === 3) {
       setProgresBar(100);
       setTextoContexto(" ");
     }
   }, [indiceComponente]);
 
+  //Borramos toda la informacion acumulado
   const reset = () => {
     setIndiceComponente(0);
     setSelectCategory(null);
-    setProgresBar(25);
+    setProgresBar(20);
     setSelectTime(null);
   };
 

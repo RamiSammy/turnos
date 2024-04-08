@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 function SubCategory({ data, setCategory, selectCategory }) {
+  //Manejo al realizar clic en un servicio
   const handleClick = (item) => {
-    if (selectCategory == item) {
+    // si la categoría seleccionada es la misma que el elemento clicado, deseleccionarla, caso contrario lo guarda
+    if (selectCategory === item) {
       setCategory(null);
     } else {
       setCategory(item);

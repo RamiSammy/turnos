@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 function Fecha({ dato, selectTime, setSelectTime }) {
+  //Me guardo el dato y la hora de la fecha seleccionada
   const handleClick = (data, hora) => {
     const jsonDate = { data, hora };
     if (selectTime?.data === data && selectTime?.hora === hora) {
@@ -8,11 +9,11 @@ function Fecha({ dato, selectTime, setSelectTime }) {
     } else {
       setSelectTime(jsonDate);
     }
-    console.log(jsonDate);
   };
 
+  //Obtengo la fecha que se busca
   const dataFecha = dato?.date;
-  const fecha = new Date(dataFecha);
+  const partes = dataFecha.split("-");
 
   const meses = [
     "Enero",
@@ -29,9 +30,8 @@ function Fecha({ dato, selectTime, setSelectTime }) {
     "Diciembre",
   ];
 
-  const dia = fecha.getDate();
-  const mes = meses[fecha.getMonth()];
-  const fechaFormateada = `${dia} de ${mes}`;
+  const fechaFormateada = `${partes[2]} de ${meses[partes[1] - 1]}`;
+
   return (
     <div>
       <div>{fechaFormateada}</div>

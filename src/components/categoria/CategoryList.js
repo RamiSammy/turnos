@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import Category from "./Category";
 
-const data = require("../API/services.json");
+const data = require("../../API/services.json");
 
 function CategoryList({ selectCategory, setSelectCategory }) {
   const [allCategorias, setCategorias] = useState([]);

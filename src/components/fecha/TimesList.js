@@ -2,22 +2,25 @@ import React, { useState, useEffect } from "react";
 
 import Fecha from "./Fecha";
 
-const data = require("../API/slots.json");
+const data = require("../../API/slots.json");
 
 function TimesList({ serviceSelect, selectTime, setSelectTime }) {
   const [infoTime, setInfoTime] = useState([]);
 
   useEffect(() => {
+    //Filtro los datos segun el servicio seleccionado
     const infoTimeService = data?.filter(
-      (dato) => dato.serviceId == serviceSelect.id
+      (dato) => dato.serviceId === serviceSelect.id
     );
 
+    //Ordeno por fecha
     const sortedData = infoTimeService.sort((a, b) => {
       const dateA = new Date(a.date);
       const dateB = new Date(b.date);
       return dateA - dateB;
     });
 
+    //Lo guardo
     setInfoTime(sortedData);
   }, [serviceSelect]);
 
